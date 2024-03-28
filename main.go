@@ -26,4 +26,7 @@ func main() {
 	rangeTwo := name[2:]
 	rangwThree := name[:3]
 	fmt.Println(rangeOne, rangeTwo,rangwThree)
+
+	rangeOne = append(rangeOne, "kemi")
+	fmt.Println(rangeOne)
 }
