@@ -2,21 +2,28 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
+	// var ages [3]int = [3]int{20, 25, 30}
+	var ages = [3]int{20, 25, 30}
 
-	age := 24
-	name := "David"
-	// Print
-	fmt.Print("Femi, ")
-	fmt.Print("Falase \n")
-	fmt.Print("Samuel \n")
+	name := [4]string{"femi","sameul","ayo","dare"}
+	name[1] = "yinka"
 
-	fmt.Println("Hello World!")
-	fmt.Println("Goodbye World!")
+	fmt.Println(ages, len(ages))
+	fmt.Println(name, len(name))
 
-	fmt.Println("my age is", age, "and my name is", name)
+	// slices (use arrays under the hood)
+	var scores = []int{100,90,30}
+	fmt.Println(scores)
+	scores[2] = 60
+	fmt.Println(scores)
 
-	// Printf (formatted string) %_ = format specifier
-	fmt.Printf("my age is %v and my name is %v", age, name)
+	scores = append(scores, 87)
+	fmt.Println(scores, len(scores))
 
+	// slice ranges
+	rangeOne := name[1:4]
+	rangeTwo := name[2:]
+	rangwThree := name[:3]
+	fmt.Println(rangeOne, rangeTwo,rangwThree)
 }
