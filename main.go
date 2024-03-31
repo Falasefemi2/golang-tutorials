@@ -5,23 +5,18 @@ import (
 )
 
 func main() {
-	// greeting := "Hello my friend"
+	// var ages  [3]int = [3]int{1,2,3}
+	var ages = [3]int{1,2,3}
 
-	// fmt.Println(strings.Contains(greeting, "Hello"))
-	// fmt.Println(strings.ReplaceAll(greeting, "Hello", "hi"))
-	// fmt.Println(strings.ToUpper(greeting))
-	// // fmt.Println(strings.Index(greeting, "y"))
-	// fmt.Println(strings.Split(greeting, " "))
-	// fmt.Println("original", greeting)
+	names := [4]string{"femi", "samuel", "dare", "ayo"}
+	names[1] = "yinka"
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
 
-
-	ages := []int{20,302,22,11,30,990,2202}
-	fm := ages[2:5]
-	fmt.Println(fm)
-
-	// sort.Ints(ages)
-	// fmt.Println(ages)
-
-
-
+	// slices
+	var scores = []int{100,90,80}
+	fmt.Println(scores)
+	scores[2] = 34
+	scores = append(scores, 67)
+	fmt.Println(scores)
 }
