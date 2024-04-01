@@ -2,18 +2,16 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
-	for i := 1; i <= 100; i++ {
-		if i % 3 ==0 && i % 5 == 0 {
-			fmt.Println("FizzBuzz")
-		} else if i % 3 == 0 {
-			fmt.Println("Fizz")
-		} else if i % 5 == 0 {
-			fmt.Println("Buzz")
-		} else {
-			fmt.Println(i)
-		}
-	} 
+	greeting := "Hello from greetings"
+
+	fmt.Println(strings.Contains(greeting, "Hello!"))
+	fmt.Println(strings.ReplaceAll(greeting,"Hello", "Hi"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "lo"))
+	fmt.Println(strings.Split(greeting, "  "))
+	fmt.Println("Original", greeting)
 }
