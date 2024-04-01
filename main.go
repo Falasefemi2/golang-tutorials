@@ -2,38 +2,38 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"strings"
 )
 
-func sayGreeting(n string) {
-	fmt.Printf("Good Morning %v \n", n )
-} 
+func getInitials(n string) (string, string) {
+	s := strings.ToUpper(n)
+	names := strings.Split(s, " ")
+	fmt.Println(names)
 
-func sayBye(n string) {
-	fmt.Printf("GoodBye %v \n", n )
-} 
-
-func cycleNames(n []string, f func(string)) {
-	for _, v := range n {
-		f(v)
+	var initials [] string
+	for _, v := range names {
+		initials = append(initials, v[:1])
+		fmt.Println(initials)
 	}
-}
 
-func circlArea (r float64) float64 {
-	return math.Pi * r * r
+	if len(initials) > 1 {
+		return initials[0], initials[1]
+	}
+
+	return initials[0], "_"
 }
 
 func main() {
-	// sayGreeting("Femi")
-	// sayGreeting("Samuel")
-	// sayBye("Dare")
-	cycleNames([]string{"femi","sam","ayo"}, sayGreeting)
-	cycleNames([]string{"femi","sam","ayo"}, sayBye)
-	
-	a1 := circlArea(10.5)
-	a2 := circlArea(15.5)
-	fmt.Println(a1,a2)
-	fmt.Printf("circle 1 is %0.3f  and circle 2 is %0.3f",a1, a2)
+	fn1, sn1 := getInitials("femi falase")
+	fmt.Println(fn1,sn1)
+
+	fn2, sn2 := getInitials("yusuf tayo")
+	fmt.Println(fn2,sn2)
+
+	fn3, sn3 := getInitials("yusuf")
+
+	fmt.Println(fn3,sn3)
+
 }
 
 
