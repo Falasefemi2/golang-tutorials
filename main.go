@@ -2,38 +2,27 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
-func getInitials(n string) (string, string) {
-	s := strings.ToUpper(n)
-	names := strings.Split(s, " ")
-	fmt.Println(names)
 
-	var initials [] string
-	for _, v := range names {
-		initials = append(initials, v[:1])
-		fmt.Println(initials)
+func getEvenOdd(numbers []int) ([]int, []int) {
+	var evenNumber []int
+	var oddNumber []int
+
+	for _, v := range numbers {
+		if v % 2 == 0 {
+			evenNumber = append(evenNumber, v)
+		} else {
+			evenNumber = append(oddNumber, v)
+
+		}
 	}
-
-	if len(initials) > 1 {
-		return initials[0], initials[1]
-	}
-
-	return initials[0], "_"
+	return evenNumber, oddNumber
 }
 
 func main() {
-	fn1, sn1 := getInitials("femi falase")
-	fmt.Println(fn1,sn1)
-
-	fn2, sn2 := getInitials("yusuf tayo")
-	fmt.Println(fn2,sn2)
-
-	fn3, sn3 := getInitials("yusuf")
-
-	fmt.Println(fn3,sn3)
-
+	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	even, odd := getEvenOdd(numbers)
+	fmt.Println("Even numbers:", even)
+    fmt.Println("Odd numbers:", odd)
 }
-
-
