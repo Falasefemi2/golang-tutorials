@@ -2,27 +2,14 @@ package main
 
 import "fmt"
 
-func getTheSmallest() {
-	x := []int {
-		20,5,4,1,-1,
-	}
 
-	if len(x) == 0 {
-		fmt.Println("Slice is empty")
-		return
-	}
-
-	smallest := x[0]
-	for _, num := range x {
-		fmt.Println(num)
-		if num < smallest {
-			smallest = num
-		}
-	}
-	fmt.Println("The smallest number is:", smallest)
-
-}
 
 func main() {
-	getTheSmallest()
+xs := []float64{1,2,3,4,5,6,7,8,9,10}
+
+total := 0.0
+for _, v := range xs {
+	total += v
+}
+fmt.Println(total / float64(len(xs)))
 }
