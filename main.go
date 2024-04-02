@@ -2,31 +2,24 @@ package main
 
 import "fmt"
 
-func highestScorer(scores map[string]int) string {
+func totalInventoryValue(inventory map[string]int) int {
 	// Your code here
-	var highestScore int
-	var highestScorer string
+	total := 0
 
-	for name, score := range scores {
-		if score > highestScore {
-			highestScore = score
-			highestScorer = name
-		}
+	for _, v :=  range inventory {
+		total += v
 	}
-
-	return highestScorer
-
-
+	return total
 }
 
 func main() {
-	scores := map[string]int{
-		"Alice": 85,
-		"Bob": 92,
-		"Charlie": 78,
-		"David": 95,
+	inventory := map[string]int{
+		"apple":  50,
+		"banana": 30,
+		"orange": 40,
 	}
-	fmt.Println(highestScorer(scores)) // Should print: "David"
+	
+	fmt.Println(totalInventoryValue(inventory)) // Should print: 120
 
 	
 }
