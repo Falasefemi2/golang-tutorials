@@ -10,7 +10,20 @@ func half(n int) (int, bool) {
 	}
 }
 
+func getGreatest() {
+x:= []int{20,90,30}
+greatest := x[0]
+for _, v := range x {
+if v > greatest {
+	greatest = v
+}
+}
+fmt.Println(greatest)
+
+}
+
 func main() {
-	result, isEven := half(6)
-	fmt.Println(result, isEven) // Output: 0 false
+	// result, isEven := half(6)
+	// fmt.Println(result, isEven) // Output: 0 false
+	getGreatest()
 }
